@@ -3,42 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI実践ガイド 完全目次</title>
+  <title>AIエージェントの垂直スタック構造と企業組織・IT資源・ITインフラ白書2026年版−内容編成（目次）</title>
   <style>
-    body {
+    * {
       margin: 0;
-      padding: 20px;
-      font-family: 'Hiragino Kaku Gothic ProN', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
       line-height: 1.8;
+      color: #333;
+      background-color: #fcfcf9;
+      padding: 20px;
     }
+    
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+    
     h1 {
-      font-size: 24px;
+      font-size: 28px;
       color: #32808d;
       border-bottom: 3px solid #32808d;
-      padding-bottom: 10px;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+      font-weight: bold;
     }
+    
     h2 {
-      font-size: 20px;
+      font-size: 22px;
       color: #626c71;
-      margin-top: 30px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      border-left: 4px solid #32808d;
+      font-weight: bold;
     }
+    
+    h3 {
+      font-size: 18px;
+      color: #32808d;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    
+    h4 {
+      font-size: 16px;
+      color: #626c71;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+    
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 0;
+      list-style-position: inside;
+    }
+    
     ul {
       list-style-type: none;
-      padding-left: 0;
     }
+    
     li {
-      padding: 8px 0;
+      padding: 10px 0;
+      padding-left: 20px;
       border-bottom: 1px solid #eee;
+      position: relative;
     }
-    /* ここに長文コンテンツのスタイルを記述 */
+    
+    li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #32808d;
+      font-weight: bold;
+    }
+    
+    ul ul, ol ul {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 30px;
+    }
+    
+    ul ul li, ol ul li {
+      border-bottom: none;
+      padding: 5px 0;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #626c71;
+    }
+    
+    ul ul li:before {
+      content: "•";
+      color: #626c71;
+    }
+    
+    .intro {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      border-left: 4px solid #32808d;
+    }
+    
+    .section {
+      margin-bottom: 40px;
+    }
+    
+    .author-section {
+      background-color: #fcfcf9;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 50px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .author-section h2 {
+      border-left: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+    
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 22px;
+      }
+      
+      h2 {
+        font-size: 18px;
+      }
+      
+      h3 {
+        font-size: 16px;
+      }
+      
+      li {
+        padding-left: 15px;
+      }
+      
+      ul ul li, ol ul li {
+        padding-left: 15px;
+      }
+    }
+    
+    /* 印刷用スタイル */
+    @media print {
+      body {
+        background-color: white;
+      }
+      
+      .container {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
+
+    <h1>AIエージェントの垂直スタック構造と企業組織・IT資源・ITインフラ白書2026年版−内容編成（目次）</h1>
+
+   <div class="section">
+
 <span style="font-size:medium;"><strong>■内容編成（目次）■</strong></span>
 
 <strong>緒言</strong>
@@ -3668,7 +3818,6 @@
 228.6.1　社会・市場動向
 
 ［以上］
-    <!-- 数万文字でもOK -->
-  </div>
-</body>
-</html>
+
+   </div>
+
