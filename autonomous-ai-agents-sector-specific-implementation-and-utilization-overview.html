@@ -5,17 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Autonomous AI Agents - Sector-Specific Implementation and Utilization Overview</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif; line-height: 1.8; color: #333; background-color: #fcfcf9; padding: 20px;}
-    .container {max-width: 900px; margin: 0 auto; background-color: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    h1 {font-size: 28px; color: #32808d; border-bottom: 3px solid #32808d; padding-bottom: 15px; margin-bottom: 30px; font-weight: bold;}
-    h2 {font-size: 22px; color: #626c71; margin-top: 40px; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #32808d; font-weight: bold;}
-    ul {list-style-type: none; padding-left: 0; margin-bottom: 20px;}
-    li {padding: 10px 0; padding-left: 20px; border-bottom: 1px solid #eee; position: relative;}
-    li:before {content: "▸"; position: absolute; left: 0; color: #32808d; font-weight: bold;}
-    .level-2 {padding-left: 40px; font-size: 14px;}
-    .level-3 {padding-left: 60px; font-size: 14px; color: #626c71;}
-    @media (max-width: 768px) {body {padding: 10px;} .container {padding: 20px;} h1 {font-size: 22px;} h2 {font-size: 18px;}}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Meiryo', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-size: 13px;             /* 本文サイズをさらに小さめに */
+      line-height: 1.25;           /* 行間も狭く */
+      color: #333;
+      background-color: #fcfcf9;
+      padding: 12px;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 18px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 17px;             /* h1もコンパクトに */
+      color: #32808d;
+      border-bottom: 1px solid #32808d;
+      padding-bottom: 7px;
+      margin-bottom: 14px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    h2 {
+      font-size: 15px;
+      color: #626c71;
+      margin-top: 21px;
+      margin-bottom: 10px;
+      padding-left: 6px;
+      border-left: 2px solid #32808d;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    h3, h4, h5, h6 {
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    p {
+      margin-bottom: 7px;
+      font-size: 1em;
+      line-height: 1.25;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    li {
+      padding: 4px 0;
+      padding-left: 13px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #32808d;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .level-2 {
+      padding-left: 20px;
+      font-size: 12px;
+      line-height: 1.15;
+    }
+    .level-3 {
+      padding-left: 26px;
+      font-size: 11px;
+      color: #626c71;
+      line-height: 1.15;
+    }
+    @media (max-width: 768px) {
+      body { padding: 7px; font-size: 12px; }
+      .container { padding: 6px 3px; }
+      h1 { font-size: 15px; }
+      h2 { font-size: 13px; }
+    }
   </style>
 </head>
 <body>

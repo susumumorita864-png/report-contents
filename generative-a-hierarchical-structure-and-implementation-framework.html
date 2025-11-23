@@ -5,17 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generative A Hierarchical Structure and Implementation Framework</title>
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif; line-height: 1.8; color: #333; background-color: #fcfcf9; padding: 20px;}
-    .container {max-width: 900px; margin: 0 auto; background-color: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-    h1 {font-size: 28px; color: #32808d; border-bottom: 3px solid #32808d; padding-bottom: 15px; margin-bottom: 30px; font-weight: bold;}
-    h2 {font-size: 22px; color: #626c71; margin-top: 40px; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #32808d; font-weight: bold;}
-    ul {list-style-type: none; padding-left: 0; margin-bottom: 20px;}
-    li {padding: 10px 0; padding-left: 20px; border-bottom: 1px solid #eee; position: relative;}
-    li:before {content: "▸"; position: absolute; left: 0; color: #32808d; font-weight: bold;}
-    .level-2 {padding-left: 40px; font-size: 14px;}
-    .level-3 {padding-left: 60px; font-size: 14px; color: #626c71;}
-    @media (max-width: 768px) {body {padding: 10px;} .container {padding: 20px;} h1 {font-size: 22px;} h2 {font-size: 18px;}}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Meiryo', 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif;
+      font-size: 13px;             /* 本文サイズをさらに小さめに */
+      line-height: 1.25;           /* 行間も狭く */
+      color: #333;
+      background-color: #fcfcf9;
+      padding: 12px;
+    }
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 18px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 17px;             /* h1もコンパクトに */
+      color: #32808d;
+      border-bottom: 1px solid #32808d;
+      padding-bottom: 7px;
+      margin-bottom: 14px;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    h2 {
+      font-size: 15px;
+      color: #626c71;
+      margin-top: 21px;
+      margin-bottom: 10px;
+      padding-left: 6px;
+      border-left: 2px solid #32808d;
+      font-weight: bold;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+    h3, h4, h5, h6 {
+      font-size: 13px;
+      font-weight: bold;
+      margin-top: 14px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    p {
+      margin-bottom: 7px;
+      font-size: 1em;
+      line-height: 1.25;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    li {
+      padding: 4px 0;
+      padding-left: 13px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #32808d;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .level-2 {
+      padding-left: 20px;
+      font-size: 12px;
+      line-height: 1.15;
+    }
+    .level-3 {
+      padding-left: 26px;
+      font-size: 11px;
+      color: #626c71;
+      line-height: 1.15;
+    }
+    @media (max-width: 768px) {
+      body { padding: 7px; font-size: 12px; }
+      .container { padding: 6px 3px; }
+      h1 { font-size: 15px; }
+      h2 { font-size: 13px; }
+    }
   </style>
 </head>
 <body>
@@ -4968,9 +5047,119 @@
         <li>240.17　出典［2］</li>
       </ul>
     </div>
+    <div class="section">
+      <h2>1	生成AIに関与する産業（業界）およびビジネスモデル形成の基本構造</h2>
+      <ul>
+        <li>1.1	生成AIのレイヤー構造（全体像）</li>
+        <li>1.2	各レイヤーの特性概要と今後のシナリオ</li>
+        <li>1.3	レイヤー間の相互関係（依存とボトルネック）</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>1	生成AI産業の多層シナリオ［1］</h2>
+      <ul>
+        <li>1.1	位置づけと全体観</li>
+        <li>1.2	インフラ層（半導体・データセンター・クラウド）</li>
+        <li class="level-2">1.2.1	インフラの今後のシナリオ</li>
+        <li>1.3	基盤モデル層（Foundation Models）</li>
+        <li class="level-2">1.3.1	基盤モデルの今後のシナリオ</li>
+        <li>1.4	オーケストレーション/MLOps層（モデルハブ・運用基盤）</li>
+        <li class="level-2">1.4.1	オーケストレーション/MLOpsの今後のシナリオ</li>
+        <li>1.5	アプリケーション層（水平/垂直アプリとエージェント）</li>
+        <li class="level-2">1.5.1	アプリケーションの今後のシナリオ</li>
+        <li>1.6	サービス層（SI/コンサル/運用BPO）</li>
+        <li class="level-2">1.6.1	サービスの今後のシナリオ</li>
+        <li>1.7	マーケット構造と競争優位</li>
+        <li>1.8	政策・規制・標準化の潮流</li>
+        <li>1.9	エンタープライズ導入への含意</li>
+        <li>1.10	参考文献</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>2	生成AI産業の多層シナリオ［2］</h2>
+      <ul>
+        <li>2.1	ガバナンス・安全性層のシナリオ</li>
+        <li class="level-2">2.1.1	ガバナンス・安全性の具体シナリオ</li>
+        <li>2.2	データ層（取得・整備・流通）のシナリオ</li>
+        <li class="level-2">2.2.1	データの具体シナリオ</li>
+        <li>2.3	エージェント／コパイロット層のシナリオ</li>
+        <li class="level-2">2.3.1	エージェント／コパイロットの具体シナリオ</li>
+        <li>2.4	アプリケーション層のシナリオ（水平・垂直）</li>
+        <li class="level-2">2.4.1	アプリケーションの具体シナリオ</li>
+        <li>2.5	インフラ層の深化（電力・冷却・ネットワーク）</li>
+        <li class="level-2">2.5.1	インフラの具体シナリオ</li>
+        <li>2.6	MLOps／評価・監視のシナリオ</li>
+        <li class="level-2">2.6.1	MLOpsの具体シナリオ</li>
+        <li>2.7	収益モデルとプライシングのシナリオ</li>
+        <li class="level-2">2.7.1	収益モデルの具体シナリオ</li>
+        <li>2.8	企業のPoC→本番スケール戦略（実装編）</li>
+        <li class="level-2">2.8.1	スケールのチェックリスト</li>
+        <li>2.9	産業別の焦点領域</li>
+        <li class="level-2">2.9.1	産業別シナリオの留意点</li>
+        <li>2.10	エコシステムと標準化の見取り図</li>
+        <li class="level-2">2.10.1	標準化の具体シナリオ</li>
+        <li>2.11	リスクとレジリエンス設計</li>
+        <li class="level-2">2.11.1	レジリエンスの具体シナリオ</li>
+        <li>2.12	戦略アーキテクチャ（統合像）</li>
+        <li class="level-2">2.12.1	実行ロードマップ（12〜24カ月）</li>
+        <li>2.13	まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>3	市場動向とマクロ環境</h2>
+      <ul>
+        <li>3.1	生成AIの産業エコシステム</li>
+        <li>3.2	概念実証と組織的実施への影響</li>
+        <li>3.3	将来のシナリオと戦略的意味合い</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>4	生成AIの産業エコシステム</h2>
+      <ul>
+        <li>4.1	エコシステム全体像</li>
+        <li>4.2	インフラ層（半導体・クラウド・データセンター）</li>
+        <li>4.3	インフラ層の相互作用</li>
+        <li>4.4	基盤モデル層（Foundation Models）</li>
+        <li class="level-2">4.4.1	基盤モデル層の相互作用</li>
+        <li>4.5	モデル運用層（モデルハブ・MLOps・評価）</li>
+        <li class="level-2">4.5.1	モデル運用層の相互作用</li>
+        <li>4.6	アプリケーション層（水平/垂直・エージェント）</li>
+        <li class="level-2">4.6.1	アプリケーション層の相互作用</li>
+        <li>4.7	サービス層（SI/コンサル/監査/運用）</li>
+        <li class="level-2">4.7.1	サービス層の相互作用</li>
+        <li>4.8	横断機能：データ・評価・ガバナンス</li>
+        <li class="level-2">4.8.1	横断機能の相互作用</li>
+        <li>4.9	力学：投資・コスト・普及</li>
+        <li>4.10	地域エコシステムと産業政策</li>
+        <li>4.11	エコシステムのリスクとレジリエンス</li>
+        <li>4.12	参考文献</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>5	生成AIの産業エコシステムと階層モデル</h2>
+      <ul>
+        <li>5.1	ガバナンスと市場規律</li>
+        <li class="level-2">5.1.1	実装の転換点</li>
+        <li>5.2	データ連携と来歴管理</li>
+        <li class="level-2">5.2.1	データ契約の中核項目</li>
+        <li>5.3	インフラとエネルギー制約</li>
+        <li class="level-2">5.3.1	運用上の実務</li>
+        <li>5.4	エージェント／コパイロットの拡張</li>
+        <li class="level-2">5.4.1	産業現場の進展</li>
+        <li>5.5	収益モデルと契約デザイン</li>
+        <li class="level-2">5.5.1	設計の勘所</li>
+        <li>5.6	産業別エコシステムの具体像</li>
+        <li class="level-2">5.6.1	産業別の要件</li>
+        <li>5.7	エコシステム・プレイヤーの役割再定義</li>
+        <li>5.8	リスク管理とレジリエンスの設計指針</li>
+        <li class="level-2">5.8.1	チェックリスト</li>
+        <li>5.9	標準化と相互運用のロードマップ</li>
+        <li class="level-2">5.9.1	実務の要点</li>
+        <li>5.10	企業スケール戦略（12〜24カ月）</li>
+        <li class="level-2">5.10.1	成功のカギ</li>
+        <li>5.11	まとめ</li>
+      </ul>
+    </div>
   </div>
 </body>
-
 </html>
-
-
