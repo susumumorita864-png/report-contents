@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical AI　</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif; line-height: 1.8; color: #333; background-color: #fcfcf9; padding: 20px;}
+    .container {max-width: 900px; margin: 0 auto; background-color: white; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+    h1 {font-size: 28px; color: #32808d; border-bottom: 3px solid #32808d; padding-bottom: 15px; margin-bottom: 30px; font-weight: bold;}
+    h2 {font-size: 22px; color: #626c71; margin-top: 40px; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #32808d; font-weight: bold;}
+    ul {list-style-type: none; padding-left: 0; margin-bottom: 20px;}
+    li {padding: 10px 0; padding-left: 20px; border-bottom: 1px solid #eee; position: relative;}
+    li:before {content: "▸"; position: absolute; left: 0; color: #32808d; font-weight: bold;}
+    .level-2 {padding-left: 40px; font-size: 14px;}
+    .level-3 {padding-left: 60px; font-size: 14px; color: #626c71;}
+    @media (max-width: 768px) {body {padding: 10px;} .container {padding: 20px;} h1 {font-size: 22px;} h2 {font-size: 18px;}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Physical AI　</h1>
+    <div class="section">
+      <h2>1　フィジカルAI市場の包括的分析</h2>
+      <ul>
+        <li>1.1　市場規模と成長率</li>
+        <li>1.2　関連市場セグメントと市場規模</li>
+        <li>1.3　市場の主要トレンド</li>
+        <li class="level-2">1.3.1　ビジョン・ランゲージ・アクション（VLA）モデルの急速な進化</li>
+        <li class="level-2">1.3.1　ワールドファンデーションモデル（WFM）の台頭</li>
+        <li class="level-2">1.3.1　シミュレーション・トゥ・リアル（Sim-to-Real）技術の成熟</li>
+        <li class="level-2">1.3.1　接続型ロボティクスとIoRT市場の急速な拡大</li>
+        <li class="level-2">1.3.1　生成AIモデルと自動運転への統合</li>
+        <li>1.4　推進要因</li>
+        <li>1.5　市場機会と領先セグメント</li>
+        <li>1.6　制約と課題</li>
+        <li>1.7　規制・安全面の課題</li>
+        <li>1.8　主要企業と研究機関</li>
+        <li>1.9　市場セグメント別の詳細分析</li>
+        <li class="level-2">1.9.1　ハードウェアセグメント</li>
+        <li class="level-2">1.9.1　ソフトウェア・AIセグメント</li>
+        <li class="level-2">1.9.1　産業応用別</li>
+        <li>1.10　投資動向と資金フロー</li>
+        <li class="level-2">1.10.1　2024～2025年のロボティクス投資の概況</li>
+        <li class="level-2">1.10.1　主要資金調達ラウンド（2024～2025年）</li>
+        <li class="level-2">1.10.1　投資トレンドと特性</li>
+        <li>1.11　NVIDIA Cosmos・Omniverse・Isaac Simエコシステムの戦略的役割</li>
+        <li>1.12　市場成長見込みと将来動向</li>
+        <li class="level-2">1.12.1　短期展望（2025～2027年）</li>
+        <li class="level-2">1.12.1　中期展望（2027～2030年）</li>
+        <li class="level-2">1.12.1　長期展望（2030年以降）</li>
+        <li>1.13　小括：フィジカルAI市場の将来ポジショニング</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>2　フィジカルAI統合・ソリューション：カテゴリー別詳細分析</h2>
+      <ul>
+        <li>2.1　はじめに</li>
+        <li>2.2　コア統合アーキテクチャ</li>
+        <li class="level-2">2.2.1　NVIDIA Three-Computer Model（3層統合モデル）</li>
+        <li class="level-2">2.2.1　統合ワークフロー例：Sim-to-Real Pipeline</li>
+        <li>2.3　ミドルウェア・OS層の統合</li>
+        <li class="level-2">2.3.1　ROS 2（Robot Operating System 2）の統合ロール</li>
+        <li class="level-2">2.3.1　GPU統合とリアルタイム処理</li>
+        <li class="level-2">2.3.1　ロボティクス基盤モデルとの連携</li>
+        <li>2.4　ワールドモデル・OS化層</li>
+        <li class="level-2">2.4.1　ワールドモデルの構造的役割</li>
+        <li class="level-2">2.4.1　NVIDIA Cosmos：ワールドモデル・プラットフォーム</li>
+        <li class="level-2">2.4.1　ワールドモデルのOSとしての機能</li>
+        <li>2.5　エッジ・クラウド統合アーキテクチャ</li>
+        <li class="level-2">2.5.1　マルチレイヤーコンピューティング統合</li>
+        <li class="level-2">2.5.1　接続型ロボティクス（Connected Robotics）の実装</li>
+        <li>2.6　マルチモーダル知覚統合</li>
+        <li class="level-2">2.6.1　マルチセンサフュージョン・アーキテクチャ</li>
+        <li class="level-2">2.6.1　Visual SLAM・VSLAM統合</li>
+        <li>2.7　AI駆動型動作計画・タスク実行層</li>
+        <li class="level-2">2.7.1　ファンデーションモデル統合戦略</li>
+        <li class="level-2">2.7.1　Behavior Tree（BT）・LLM統合</li>
+        <li class="level-2">2.7.1　生成AIを使用した行動計画</li>
+        <li>2.8　ドメイン別統合ソリューション</li>
+        <li class="level-2">2.8.1　スマートマニュファクチャリング・ソリューション</li>
+        <li class="level-2">2.8.1　ロジスティクス・ウェアハウスソリューション</li>
+        <li class="level-2">2.8.1　ヘルスケア・医療ソリューション</li>
+        <li class="level-2">2.8.1　自動運転・モビリティソリューション</li>
+        <li>2.9　統合ソリューション・プラットフォーム</li>
+        <li class="level-2">2.9.1　Intrinsic Flowstate + NVIDIA統合</li>
+        <li class="level-2">2.9.1　ROS 2・NVIDIA統合エコシステム</li>
+        <li class="level-2">2.9.1　General Robotics GRID統合プラットフォーム</li>
+        <li>2.10　自律移動システムのOSとしてのワールドモデル進化</li>
+        <li class="level-2">2.10.1　ワールドモデルの機能拡張</li>
+        <li class="level-2">2.10.1　マルチエージェント協調制御</li>
+        <li>2.11　業界別統合実装フレームワーク</li>
+        <li class="level-2">2.11.1　Physical AI Agents（物理AI エージェント）</li>
+        <li class="level-2">2.11.1　事例1: Ph-RAG（Physical Retrieval-Augmented Generation）</li>
+        <li class="level-2">2.11.1　事例2: ハイブリッド・エージェントシステム</li>
+        <li>2.12　フィジカルAI統合の現在の制限と今後の展開</li>
+        <li class="level-2">2.12.1　現在の統合課題</li>
+        <li class="level-2">2.12.1　近期的展開（2025～2027年）</li>
+        <li class="level-2">2.12.1　中期的進化（2027～2030年）</li>
+        <li>2.13　小括</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>3　フィジカルAIエコシステム：カテゴリー別詳細分析</h2>
+      <ul>
+        <li>3.1　エコシステムの全体構造</li>
+        <li>3.2　ロボットハードウェア・プラットフォーム層</li>
+        <li class="level-2">3.2.1　ヒューマノイドロボット企業エコシステム</li>
+        <li class="level-2">3.2.1　自律移動ロボット（AMR）・ロジスティクスエコシステム</li>
+        <li class="level-2">3.2.1　マニピュレータ・コボットエコシステム</li>
+        <li>3.3　センサ・知覚システム層</li>
+        <li class="level-2">3.3.1　LiDARセンサエコシステム</li>
+        <li class="level-2">3.3.1　カメラ・ビジョンシステム層</li>
+        <li class="level-2">3.3.1　触覚・IMU・運動センサ</li>
+        <li>3.4　エッジコンピュート・通信層</li>
+        <li class="level-2">3.4.1　エッジAIチップセットエコシステム</li>
+        <li class="level-2">3.4.1　通信・接続レイヤー</li>
+        <li>3.5　ロボティクスプラットフォーム・ソフトウェアレイヤー</li>
+        <li class="level-2">3.5.1　ROS 2統合エコシステム</li>
+        <li class="level-2">3.5.1　シミュレーション・デジタルツインプラットフォーム</li>
+        <li class="level-2">3.5.1　生成AI・ファンデーションモデルプラットフォーム</li>
+        <li>3.6　システムインテグレータ・ソリューション企業層</li>
+        <li class="level-2">3.6.1　主要システムインテグレータ</li>
+        <li class="level-2">3.6.1　Accenture Physical AI Orchestrator事例[31]</li>
+        <li>3.7　研究・学術エコシステム</li>
+        <li class="level-2">3.7.1　主要研究機関</li>
+        <li class="level-2">3.7.1　大学・企業連携モデル</li>
+        <li>3.8　投資・資本フローエコシステム</li>
+        <li class="level-2">3.8.1　2025年のロボティクス投資動向</li>
+        <li class="level-2">3.8.1　投資テーマの進化</li>
+        <li>3.9　業界別・ドメイン別エコシステム</li>
+        <li class="level-2">3.9.1　スマートマニュファクチャリングエコシステム</li>
+        <li class="level-2">3.9.1　ヘルスケア・医療ロボティクスエコシステム</li>
+        <li class="level-2">3.9.1　ロジスティクス・ウェアハウスエコシステム</li>
+        <li class="level-2">3.9.1　自動運転・モビリティエコシステム</li>
+        <li>3.10　新興パラダイム：統合型ロボティクスプラットフォーム</li>
+        <li class="level-2">3.10.1　Neuraverse（NEURA Robotics）</li>
+        <li class="level-2">3.10.1　SAP Embodied AI Initiative</li>
+        <li>3.11　相互運用性・標準化エコシステム</li>
+        <li class="level-2">3.11.1　OpenUSD（Universal Scene Description）</li>
+        <li>3.12　グローバルエコシステムの地域別特性</li>
+        <li class="level-2">3.12.1　北米エコシステム</li>
+        <li class="level-2">3.12.1　欧州エコシステム</li>
+        <li class="level-2">3.12.1　アジア太平洋エコシステム</li>
+        <li>3.13　ベンチマークとKPI・エコシステム健全性指標</li>
+        <li>3.14　エコシステム成熟度の課題と対策</li>
+        <li class="level-2">3.14.1　現在の課題</li>
+        <li class="level-2">3.14.1　解決策の出現</li>
+        <li>3.15　小括：フィジカルAIエコシステムの統合的理解</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>4　現実世界との相互作用を実現するフィジカルAIシステム</h2>
+      <ul>
+        <li>4.1　概要</li>
+        <li>4.2　導入形態</li>
+        <li>4.3　導入されるモデルやツール類</li>
+        <li>4.4　外部機能との連携</li>
+        <li>4.5　AI関連機能</li>
+        <li>4.6　実装にあたっての留意点</li>
+        <li>4.7　注目を集める最新動向</li>
+        <li>4.8　関与する企業</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>5　フィジカルAIと身体化知能システム</h2>
+      <ul>
+        <li>5.1　概要と定義</li>
+        <li>5.2　導入形態</li>
+        <li>5.3　導入されるモデルやツール類</li>
+        <li>5.4　外部機能との連携</li>
+        <li>5.5　AI関連機能</li>
+        <li>5.6　実装にあたっての留意点</li>
+        <li>5.7　注目を集める最新動向</li>
+        <li>5.8　関与する企業</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>6　フィジカルAIの理論的深化と多角的アプローチ</h2>
+      <ul>
+        <li>6.1　概要</li>
+        <li>6.2　実環境への展開と社会的実装</li>
+        <li>6.3　限界点と今後の技術課題</li>
+        <li>6.4　社会価値と人間中心設計の要件</li>
+        <li>6.5　技術進化のドライブ要素と今後の展開</li>
+        <li>6.6　代表的な企業／イノベータ動向</li>
+        <li>6.7　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>7　フィジカルAIの理論的深化と多角的アプローチ</h2>
+      <ul>
+        <li>7.1　概要</li>
+        <li>7.2　実環境への展開と社会的実装</li>
+        <li>7.3　限界点と今後の技術課題</li>
+        <li>7.4　社会価値と人間中心設計の要件</li>
+        <li>7.5　技術進化のドライブ要素と今後の展開</li>
+        <li>7.6　代表的な企業／イノベータ動向</li>
+        <li>7.7　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>8　フィジカルAIと物理的ニューラルネットワークの関係</h2>
+      <ul>
+        <li>8.1　フィジカルAIと物理的ニューラルネットワークの関係性：技術的共通点と相違点</li>
+        <li>8.2　はじめに</li>
+        <li>8.3　フィジカルAIと物理的ニューラルネットワークの基本概念</li>
+        <li>8.4　共通点と相違点：技術的特性の比較分析</li>
+        <li>8.5　相互作用と技術連携：研究開発における相乗効果</li>
+        <li>8.6　最新の研究動向</li>
+        <li>8.7　結論：技術融合による未来のAI基盤の構築</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>9　実世界シミュレーション学習［1］</h2>
+      <ul>
+        <li>9.1　概要と定義</li>
+        <li>9.2　事業環境と市場特性</li>
+        <li>9.3　先端技術動向</li>
+        <li>9.4　主要ツール・プラットフォーム</li>
+        <li>9.5　産業応用事例</li>
+        <li>9.6　課題と技術的限界</li>
+        <li>9.7　企業エコシステムと市場プレゼンス</li>
+        <li>9.8　研究機関・学術連携の現状</li>
+        <li>9.9　スタートアップエコシステムの発展</li>
+        <li>9.10　技術標準化と業界動向</li>
+        <li>9.11　将来展望と課題</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>10　実世界シミュレーション学習［2］</h2>
+      <ul>
+        <li>10.1　概要と定義</li>
+        <li>10.2　事業環境と市場特性</li>
+        <li>10.3　注目すべき技術トレンド</li>
+        <li>10.4　主要ツールとプラットフォーム</li>
+        <li>10.5　実装事例と応用分野</li>
+        <li>10.6　技術的課題と解決アプローチ</li>
+        <li>10.7　標準化と研究機関の動向</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>11　実世界シミュレーション学習［3］</h2>
+      <ul>
+        <li>11.1　主要企業の戦略と競争優位性</li>
+        <li>11.2　市場競争状況とプレゼンス</li>
+        <li>11.3　スタートアップ動向と新興企業</li>
+        <li>11.4　標準化動向と規制環境</li>
+        <li>11.5　将来展望と課題</li>
+        <li>11.6　市場でのプレゼンス</li>
+        <li>11.7　実装および応用事例</li>
+        <li>11.8　課題点</li>
+        <li>11.9　関与する企業・団体・スタートアップ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>12　IoT統合フィジカルシステム</h2>
+      <ul>
+        <li>12.1　事業環境</li>
+        <li>12.2　事業特性</li>
+        <li>12.3　注目すべきトピック</li>
+        <li>12.4　各種先端技術動向</li>
+        <li>12.5　適用されるツール／モデル／プロダクト</li>
+        <li>12.6　外部ツールとの連携</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>13　NVIDIAのCosmosプラットフォーム活用システム</h2>
+      <ul>
+        <li>13.1　NVIDIA Cosmosプラットフォーム活用システム概要</li>
+        <li>13.2　導入形態</li>
+        <li>13.3　導入されるモデルやツール類</li>
+        <li>13.4　外部機能との連携</li>
+        <li>13.5　AI関連機能</li>
+        <li>13.6　実装にあたっての留意点</li>
+        <li>13.7　注目を集める最新動向</li>
+        <li>13.8　関与する企業</li>
+        <li>13.9　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>14　Omniverse連携による高度シミュレーション環境</h2>
+      <ul>
+        <li>14.1　概要</li>
+        <li>14.2　導入形態</li>
+        <li>14.3　導入されるモデルやツール類</li>
+        <li>14.4　外部機能との連携</li>
+        <li>14.5　AI関連機能</li>
+        <li>14.6　実装にあたっての留意点</li>
+        <li>14.7　注目を集める最新動向</li>
+        <li>14.8　関与する主要企業</li>
+        <li>14.9　より深い応用事例</li>
+        <li>14.10　今後の展望と課題</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>15　Sim-to-Real技術による実世界適用システム</h2>
+      <ul>
+        <li>15.1　概要：Sim-to-Real技術の意義と最新動向</li>
+        <li>15.2　導入形態：産業現場・サービスロボットのユースケース</li>
+        <li>15.3　導入されるモデル／ツール類</li>
+        <li>15.4　外部機能との連携</li>
+        <li>15.5　AI関連機能：シミュレーションAIから「行動モデル」「エージェント型AI」への進化</li>
+        <li>15.6　実装にあたっての留意点</li>
+        <li>15.7　注目を集める最新動向と社会実装事例</li>
+        <li>15.8　関与する国内外企業とその技術動向</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>16　強化学習による運動制御システム</h2>
+      <ul>
+        <li>16.1　強化学習による運動制御システムの概要</li>
+        <li>16.2　導入形態</li>
+        <li>16.3　導入されるモデルやツール類</li>
+        <li>16.4　外部機能との連携</li>
+        <li>16.5　AI関連機能</li>
+        <li>16.6　実装にあたっての留意点</li>
+        <li>16.7　注目を集める最新動向</li>
+        <li>16.8　関与する企業</li>
+        <li>16.9　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>17　ニューロモルフィックロボティクスと脳型計算</h2>
+      <ul>
+        <li>17.1　概要</li>
+        <li>17.2　導入形態</li>
+        <li>17.3　導入されるモデルやツール類</li>
+        <li>17.4　外部機能との連携</li>
+        <li>17.5　AI関連機能</li>
+        <li>17.6　実装にあたっての留意点</li>
+        <li>17.7　注目を集める最新動向</li>
+        <li>17.8　関与する企業</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>18　LiDAR・SLAM統合ナビゲーション</h2>
+      <ul>
+        <li>18.1　LiDAR・SLAM統合ナビゲーションの概要</li>
+        <li>18.2　導入形態</li>
+        <li>18.3　導入されるモデルやツール類</li>
+        <li>18.4　外部機能との連携</li>
+        <li>18.5　AI関連機能</li>
+        <li>18.6　実装にあたっての留意点</li>
+        <li>18.7　注目を集める最新動向</li>
+        <li>18.8　関与する主要企業・研究機関・スタートアップ</li>
+        <li>18.9　今後期待される応用領域の広がり</li>
+        <li>18.10　AI活用のさらなる進化と将来展望</li>
+        <li>18.11　導入・運用上の課題と解決動向</li>
+        <li>18.12　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>19　ビジョントランスフォーマー（Vision Transformer, ViT）概説</h2>
+      <ul>
+        <li>19.1　ビジョントランスフォーマー（Vision Transformer, ViT）の概要</li>
+        <li>19.2　はじめに</li>
+        <li>19.3　主な特徴</li>
+        <li>19.4　分類トークン（CLS Token）の利用</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>20　ビジュアルリーズニング（視覚推論）　概説</h2>
+      <ul>
+        <li>20.1　ビジュアルリーズニング（視覚推論）の概要</li>
+        <li>20.2　主な特徴と仕組み</li>
+        <li>20.3　AIにおける視覚推論の応用</li>
+        <li>20.4　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>21　ビジョントランスフォーマーの最新研究動向と開発状況</h2>
+      <ul>
+        <li>21.1　はじめに</li>
+        <li>21.2　DINOv2（Meta AI）</li>
+        <li>21.3　ViT-22B（Google Research）</li>
+        <li>21.4　Swin Transformer</li>
+        <li>21.5　Focal Transformer</li>
+        <li>21.6　PVT v2（Pyramid Vision Transformer v2）</li>
+        <li>21.7　Next-ViT</li>
+        <li>21.8　医療分野における応用研究</li>
+        <li>21.9　主要な研究開発機関</li>
+        <li>21.10　産業界の取り組み</li>
+        <li>21.11　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>22　ビジュアルリーズニング（視覚推論）の最新研究動向と企業・機関の取り組み</h2>
+      <ul>
+        <li>22.1　はじめに</li>
+        <li>22.2　OpenAI o3およびo4-mini</li>
+        <li>22.3　LlamaV-o1：ステップバイステップ視覚推論</li>
+        <li>22.4　Visual Program Distillation（VPD）</li>
+        <li>22.5　NTTの視覚読解技術</li>
+        <li>22.6　産総研の「視覚から物体間に働く力を想起する能力」</li>
+        <li>22.7　Meta FARの知覚と推論プロジェクト</li>
+        <li class="level-2">22.8　Metaの「Llama 3.2」</li>
+        <li>22.9　Alibaba「QVQ-72B-Preview」</li>
+        <li>22.10　主要な研究開発機関と企業</li>
+        <li>22.11　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>23　フィジカルAIと人型汎用ロボット・ヒューマノイド・ロボット・擬人化ロボット　概説</h2>
+      <ul>
+        <li>23.1　フィジカルAIと人型汎用ロボットの関係性：技術と開発の統合的進化</li>
+        <li>23.2　人型ロボット導入による産業界への影響と活用事例：業界別・業務別分析</li>
+        <li>23.3　ヒューマノイドロボット市場の世界的動向と各国の戦略分析</li>
+        <li>23.4　世界の人型ロボット市場動向と各国の取り組み：成長と導入戦略の最新分析</li>
+        <li>23.5　人型汎用ロボット／ヒューマノイド・ロボット／擬人化ロボットの市場動向・国別状況・政府施策</li>
+        <li class="level-2">23.5.1　日本</li>
+        <li class="level-2">23.5.1　韓国</li>
+        <li class="level-2">23.5.1　米国、中国、欧州</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>24　人型ロボット（ヒューマノイドロボット）の市場規模と成長予測</h2>
+      <ul>
+        <li>24.1　世界市場の最新動向</li>
+        <li>24.2　主要成長要因</li>
+        <li>24.3　主要プレイヤーと競争状況</li>
+        <li>24.4　まとめ表</li>
+        <li>24.5　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>25　人型ロボットの技術的発展と将来展望：特徴、構成要素、標準化とAI統合の最新動向</h2>
+      <ul>
+        <li>25.1　はじめに</li>
+        <li>25.2　人型ロボットの定義と技術的特徴</li>
+        <li>25.3　擬人化システムの設計分類</li>
+        <li>25.4　人型ロボットの優先設計要素</li>
+        <li>25.5　人型ロボットの構成要素</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>26　フィジカルAIのロボット業界での浸透・理解・採用状況</h2>
+      <ul>
+        <li>26.1　概念の浸透と理解</li>
+        <li>26.2　採用・応用事例</li>
+        <li>26.3　業界での受容度</li>
+        <li>26.4　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>27　人型ロボットの技術検証期から大規模商用期への移行ステップ</h2>
+      <ul>
+        <li>27.1　はじめに</li>
+        <li>27.2　基礎研究・技術開発</li>
+        <li>27.3　実証実験・試験運用</li>
+        <li>27.4　技術精緻化・課題解決</li>
+        <li>27.5　社会実装・ビジネスモデル構築</li>
+        <li>27.6　大規模商用展開・量産</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>28　大規模商用期への移行に必要な主要な技術進歩</h2>
+      <ul>
+        <li>28.1　AI（人工知能）と機械学習の高度化</li>
+        <li>28.2　センサー・IoT技術の進化</li>
+        <li>28.3　クラウド・ネットワークインフラの強化</li>
+        <li>28.4　高効率・省エネ型半導体・計算資源の進化</li>
+        <li>28.5　ロボット本体のメカトロニクス・制御技術の進化</li>
+        <li>28.6　ソフトウェア・システム統合とオープン化</li>
+        <li>28.7　ビッグデータ活用とサービス最適化</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>29　生成AI統合型ヒューマノイド</h2>
+      <ul>
+        <li>29.1　概要</li>
+        <li>29.2　導入形態</li>
+        <li>29.3　導入されるモデルやツール類</li>
+        <li>29.4　外部機能との連携</li>
+        <li>29.5　AI関連機能</li>
+        <li>29.6　実装にあたっての留意点</li>
+        <li>29.7　注目を集める最新動向</li>
+        <li>29.8　関与する企業</li>
+        <li>29.9　実装事例と社会実装のインパクト</li>
+        <li>29.10　技術進化と基盤モデルの深化</li>
+        <li>29.11　エコシステムと開発プラットフォームの潮流</li>
+        <li>29.12　人間とAIの共創・協働インターフェース</li>
+        <li>29.13　社会的課題と今後の展開</li>
+        <li>29.14　先端企業・スタートアップ最前線</li>
+        <li>29.15　今後のシナリオと導入検討の指針</li>
+        <li>29.16　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>30　人型ロボットの社会実装に向けたステップ</h2>
+      <ul>
+        <li>30.1　技術開発・基盤整備</li>
+        <li>30.2　事業性検証・モデルケース構築</li>
+        <li>30.3　制度・ルール整備</li>
+        <li>30.4　社会的受容性向上・普及活動</li>
+        <li>30.5　人材育成・エコシステム形成</li>
+        <li>30.6　大規模実装・持続的イノベーション</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>31　人型ロボットの商用化における主要な障壁</h2>
+      <ul>
+        <li>31.1　コスト課題</li>
+        <li>31.2　技術的制約</li>
+        <li>31.3　社会・制度面の課題</li>
+        <li>31.4　ビジネスモデルの未確立</li>
+        <li>31.5　インフラ・環境整備の遅延</li>
+        <li>31.6　課題解決の方向性</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>32　人型ロボットの安全性と法整備の現状</h2>
+      <ul>
+        <li>32.1　安全性確保の技術的アプローチ</li>
+        <li>32.2　現行法規制の枠組み</li>
+        <li>32.3　法整備の課題と方向性</li>
+        <li>32.4　企業対応のポイント</li>
+        <li>32.5　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>33　米中のヒューマノイドロボットのコア技術仕様の違い</h2>
+      <ul>
+        <li>33.1　ヒューマノイドロボットの導入が進められている業界</li>
+        <li>33.2　技術開発トレンド</li>
+        <li class="level-2">33.2.1　投資動向</li>
+        <li class="level-2">33.2.1　市場予測</li>
+        <li>33.3　主な導入業界</li>
+        <li class="level-2">33.3.1　製造業</li>
+        <li class="level-2">33.3.1　物流業</li>
+        <li class="level-2">33.3.1　小売業</li>
+        <li class="level-2">33.3.1　医療・ヘルスケア・介護</li>
+        <li class="level-2">33.3.1　建設業</li>
+        <li class="level-2">33.3.1　災害対応・宇宙開発</li>
+        <li class="level-2">33.3.1　サービス業（飲食・教育・接客など）</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>34　ヒューマノイドロボットの導入が進められている具体的な企業</h2>
+      <ul>
+        <li>34.1　日本国内の主な導入企業・事例</li>
+        <li>34.2　海外の主な導入企業・事例</li>
+        <li>34.3　その他、導入・実証実験が進む企業・分野</li>
+        <li>34.4　傾向と今後の展開</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>35　擬人化ロボットの構成要素</h2>
+      <ul>
+        <li>35.1　身体性のデザイン（外観・表現）</li>
+        <li>35.2　感受性（センサ系）</li>
+        <li>35.3　表現系（アクチュエータ）</li>
+        <li>35.4　対話性・自律性のデザイン（知能・社会性）</li>
+        <li>35.5　統合制御・対話管理</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>36　ヒューマノイドロボットの最新技術動向</h2>
+      <ul>
+        <li>36.1　はじめに</li>
+        <li>36.2　AI統合の深化</li>
+        <li>36.3　生体模倣技術の進化</li>
+        <li>36.4　エネルギー効率の革新</li>
+        <li>36.5　国際標準化の動向</li>
+        <li>36.6　技術的課題と解決策</li>
+        <li>36.7　市場展望と予測</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>37　フィギュアAI（Figure AI） ヒューマノイドプラットフォーム</h2>
+      <ul>
+        <li>37.1　概要</li>
+        <li>37.2　導入形態</li>
+        <li>37.3　導入されるモデルやツール類</li>
+        <li>37.4　外部機能との連携</li>
+        <li>37.5　AI関連機能</li>
+        <li>37.6　実装にあたっての留意点</li>
+        <li>37.7　注目を集める最新動向</li>
+        <li>37.8　関与する企業</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>38　Jetson Thorの具体的な機能</h2>
+      <ul>
+        <li>38.1　はじめに</li>
+        <li>38.2　圧倒的なAI演算性能</li>
+        <li>38.3　マルチモーダル生成AIへの最適化</li>
+        <li>38.4　高性能CPUクラスタとI/O強化</li>
+        <li>38.5　機能安全プロセッサの統合</li>
+        <li>38.6　モジュラーアーキテクチャと省電力設計</li>
+        <li>38.7　Isaac Roboticsプラットフォームとの連携</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>39　Ariaロボットの感情的な会話能力</h2>
+      <ul>
+        <li>39.1　マルチモーダル感情認識システム</li>
+        <li>39.2　文脈適応型対話エンジン</li>
+        <li>39.3　学習進化型パーソナリティ</li>
+        <li>39.4　生理反応連動システム</li>
+        <li>39.5　技術的限界と今後の課題</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>40　Engine AIのSE01ロボットの特徴</h2>
+      <ul>
+        <li>40.1　はじめに</li>
+        <li>40.2　極めて自然な二足歩行と動作</li>
+        <li>40.3　高度な視覚・環境認識システム</li>
+        <li>40.4　堅牢かつ軽量な筐体設計</li>
+        <li>40.5　独自の関節・駆動モジュール</li>
+        <li>40.6　高性能なAI・計算プラットフォーム</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>41　Boston Dynamics Atlasロボットの最新動作能力（2025年春時点）</h2>
+      <ul>
+        <li>41.1　はじめに</li>
+        <li>41.2　驚異的な運動能力と柔軟性</li>
+        <li>41.3　環境適応力と自律性</li>
+        <li>41.4　設計とハードウェアの進化</li>
+        <li>41.5　産業応用への展開</li>
+        <li>41.6　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>42　他の技術と連携することで人型ロボットの性能を向上させる方法</h2>
+      <ul>
+        <li>42.1　はじめに</li>
+        <li>42.2　AI技術との連携</li>
+        <li>42.3　センシング技術との連携</li>
+        <li>42.4　ロボティクスと材料科学の進化</li>
+        <li>42.5　シミュレーション技術との連携</li>
+        <li>42.6　AIとロボットの共進化</li>
+        <li>42.7　人間とロボットの協調</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>43　人型汎用ロボット分野で活動する主要国内企業</h2>
+      <ul>
+        <li>43.1　はじめに</li>
+        <li>43.2　株式会社アールティ</li>
+        <li>43.3　GROOVE X株式会社</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>44　人型汎用ロボット分野で活動する主要海外企業</h2>
+      <ul>
+        <li>44.1　Apptronik（米国）</li>
+        <li>44.2　UBTECH Robotics（中国）</li>
+        <li>44.3　Boston Dynamics（米国）</li>
+        <li>44.4　Agility Robotics（米国）</li>
+        <li>44.5　1X Technologies（ノルウェー/米国）</li>
+        <li>44.6　業界動向と予測</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>45　コネクテッド・ロボット市場の動向と各国の導入・推進施策</h2>
+      <ul>
+        <li>45.1　はじめに</li>
+        <li>45.2　世界のコネクテッド・ロボット市場の動向</li>
+        <li>45.3　国別の導入・活用状況</li>
+        <li>45.4　日本政府の支援策と推進施策</li>
+        <li>45.5　各国の支援策・推進施策</li>
+        <li>45.6　導入における課題と解決策</li>
+        <li>45.7　結論と今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>46　フィジカルAIとコネクテッド・ロボットの関係性：技術融合がもたらす次世代ロボティクスの展望</h2>
+      <ul>
+        <li>46.1　はじめに</li>
+        <li>46.2　フィジカルAIの概念と技術的特徴</li>
+        <li>46.3　フィジカルAIの特性と利点</li>
+        <li>46.4　コネクテッド・ロボットの概念と技術的特徴</li>
+        <li>46.5　コネクテッド・ロボットの技術基盤</li>
+        <li>46.6　コネクテッド・ロボットの応用例</li>
+        <li>46.7　フィジカルAIとコネクテッド・ロボットの連携と相互関係</li>
+        <li>46.8　主要プレイヤーによる開発動向</li>
+        <li>46.9　現実世界での応用事例</li>
+        <li>46.10　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>47　コネクテッド・ロボット技術の包括的分析：特徴、課題、AIとの融合と将来展望</h2>
+      <ul>
+        <li>47.1　はじめに</li>
+        <li>47.2　コネクテッド・ロボットの技術的特徴と構成要素</li>
+        <li>47.3　実装事例</li>
+        <li>47.4　標準化動向と業界の取り組み</li>
+        <li>47.5　他技術との連携</li>
+        <li>47.6　インテグレーション上の課題</li>
+        <li>47.7　AIとの統合状況と今後の展望</li>
+        <li>47.8　将来の可能性と展開</li>
+        <li>47.9　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>48　コネクテッド・ロボットの技術的特徴と動向</h2>
+      <ul>
+        <li>48.1　はじめに</li>
+        <li>48.2　技術的特徴と構成要素</li>
+        <li>48.3　ドメイン特化AI</li>
+        <li>48.4　標準化動向</li>
+        <li>48.5　ここからここから</li>
+        <li>48.6　技術連携と課題</li>
+        <li>48.7　AI統合の現状と展望</li>
+        <li>48.8　今後の方向性</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>49　コネクテッドロボティクスが他の技術と連携する具体例</h2>
+      <ul>
+        <li>49.1　ホシザキとの連携：ロボット食洗システムの共同開発</li>
+        <li>49.2　JR東日本スタートアップとの連携：駅そばロボットの開発</li>
+        <li>49.3　既存ロボットや装置とのシステム統合</li>
+        <li>49.4　他分野機器との連携・省エネシステム</li>
+        <li>49.5　まとめ表</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>50　コネクテッドロボティクスのAI化と今後の可能性</h2>
+      <ul>
+        <li>50.1　はじめに</li>
+        <li>50.2　適応能力の高度化</li>
+        <li>50.3　生産プロセス最適化</li>
+        <li>50.4　エコシステム連携の深化</li>
+        <li>50.5　今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>51　コネクテッドロボティクスがインテグレーションに際して重要なポイント</h2>
+      <ul>
+        <li>51.1　はじめに</li>
+        <li>51.2　オープンアーキテクチャの採用</li>
+        <li>51.3　既存インフラとの適合性向上</li>
+        <li>51.4　人材エコシステムの構築</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>52　コネクテッドロボティクスがAIと統合される際の具体的な例</h2>
+      <ul>
+        <li>52.1　はじめに</li>
+        <li>52.2　具体的な統合例</li>
+        <li>52.3　AI検査ソフトウェアの導入</li>
+        <li>52.4　ハードウェアとAIの連携による柔軟性向上</li>
+        <li>52.5　効果と今後の展望</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>53　コネクテッド・ロボットの産業界への影響と具体的な活用事例</h2>
+      <ul>
+        <li>53.1　はじめに</li>
+        <li>53.2　産業界全般への影響と導入効果</li>
+        <li>53.3　飲食業界（影響・導入効果）</li>
+        <li>53.4　食品製造・中食産業（影響・導入効果）</li>
+        <li>53.5　物流・運輸業界（影響・導入効果）</li>
+        <li>53.6　医療・福祉業界（影響・導入効果）</li>
+        <li>53.7　調理・製造業務（影響・導入効果）</li>
+        <li>53.8　清掃・衛生管理業務（影響・導入効果）</li>
+        <li>53.9　検査・検品業務（影響・導入効果）</li>
+        <li>53.10　物流・搬送業務（影響・導入効果）</li>
+        <li>53.11　接客・案内業務（影響・導入効果）</li>
+        <li>53.12　技術的展望</li>
+        <li>53.13　市場・ビジネス展望</li>
+        <li>53.14　社会的展望</li>
+        <li>53.15　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>54　コネクテッド・ロボットの具体的な導入例</h2>
+      <ul>
+        <li>54.1　惣菜工場での盛付ロボット「Delibot」導入</li>
+        <li>54.2　そばゆでロボット・食洗機ロボット</li>
+        <li>54.3　ソフトクリームロボット</li>
+        <li>54.4　たこ焼きロボット</li>
+        <li>54.5　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>55　コネクテッド・ロボット関連企業の総合分析</h2>
+      <ul>
+        <li>55.1　はじめに</li>
+        <li class="level-2">55.2　コネクテッドロボティクス株式会社（Connected Robotics Inc.）</li>
+        <li class="level-2">55.3　ロックウェル・オートメーション（Rockwell Automation Inc.）</li>
+        <li>55.4　InDro Robotics</li>
+        <li>55.5　その他の食品工場向けロボットSIer企業</li>
+        <li>55.6　海外のシステムインテグレータ企業</li>
+        <li>55.7　JETROのスタートアップ支援プログラム参加企業</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>56　コネクテッド・ロボットに取り組む国内のスタートアップ企業</h2>
+      <ul>
+        <li>56.1　コネクテッドロボティクス株式会社</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>57　コネクテッド・ロボットに取り組む海外のスタートアップ企業</h2>
+      <ul>
+        <li>57.1　はじめに</li>
+        <li>57.2　Robust AI</li>
+        <li>57.3　Voliro</li>
+        <li>57.4　Shield AI</li>
+        <li>57.5　Simbe Robotics</li>
+        <li>57.6　Harvest Automation</li>
+        <li>57.7　Unbox Robotics</li>
+        <li>57.8　Rapid Robotics</li>
+        <li>57.9　Telekinesis</li>
+        <li>57.10　Ascento</li>
+        <li>57.11　HygenX Ai</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>58　フィジカルAIと自動運転</h2>
+      <ul>
+        <li>58.1　フィジカルAIと自動運転・自律走行車両の関係性：技術的融合と開発最前線</li>
+        <li>58.2　フィジカルAIの基本概念と特徴</li>
+        <li>58.3　自動運転・自律走行車両の技術概要</li>
+        <li>58.4　フィジカルAIと自動運転技術の連携と重複</li>
+        <li>58.5　主要企業の開発動向と戦略</li>
+        <li>58.6　課題と今後の展望</li>
+        <li>58.7　今後の展望</li>
+        <li>58.8　結論</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>59　フィジカルAIとE2E自動運転技術</h2>
+      <ul>
+        <li>59.1　フィジカルAIとE2E自動運転技術の関係性：概念・技術・開発動向の総合解析</li>
+        <li>59.2　はじめに</li>
+        <li>59.3　フィジカルAIとE2E自動運転の基本概念</li>
+        <li>59.4　E2E自動運転技術の概念</li>
+        <li>59.5　両技術の関連性と相互連携</li>
+        <li>59.6　技術的連携ポイント</li>
+        <li>59.7　機能的重複部分</li>
+        <li>59.8　産業プレーヤーの開発動向</li>
+        <li>59.9　両技術の統合的発展と今後の展望</li>
+        <li>59.10　将来の課題と展望</li>
+        <li>59.11　結論</li>
+        <li>59.12　はじめに</li>
+        <li>59.13　Figure AI（米国）</li>
+        <li>59.14　Agility Robotics（米国）</li>
+        <li>59.15　1X Technologies（ノルウェー/米国）</li>
+        <li>59.16　Sanctuary AI（カナダ）</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>60　特に注目されているヒューマノイド・ロボット系スタートアップの最新動向</h2>
+      <ul>
+        <li>60.1　Figure AI（米国）</li>
+        <li>60.2　1X Technologies（ノルウェー/米国）</li>
+        <li>60.3　Agility Robotics（米国）</li>
+        <li>60.4　MagicLab（中国）</li>
+        <li>60.5　Skild AI（米国）</li>
+        <li>60.6　Realbotix（米国）</li>
+        <li>60.7　大手企業との比較</li>
+        <li>60.8　総括</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>61　海外スタートアップ企業の強みとする技術</h2>
+      <ul>
+        <li>61.1　はじめに</li>
+        <li>61.2　ディープテック（Deep Tech）</li>
+        <li>61.3　AI・データサイエンス</li>
+        <li>61.4　IoT・ロボティクス</li>
+        <li>61.5　柔軟な開発体制とスピード</li>
+        <li>61.6　オープンイノベーションと多様な分野への応用</li>
+        <li>61.7　まとめ</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>62　海外のヒューマノイド・ロボット系スタートアップ企業に投資・支援している主なファンド・企業</h2>
+      <ul>
+        <li>62.1　はじめに</li>
+        <li>62.2　Figure AI（米国）</li>
+        <li>62.3　1X Technologies（ノルウェー/米国）</li>
+        <li>62.4　Agility Robotics（米国）</li>
+        <li>62.5　Sanctuary AI（カナダ）</li>
+        <li>62.6　中国系スタートアップ（例：Fourier, MagicLab, LimX Dynamics, AI2 Robotics等）</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>63　国内スタートアップ企業</h2>
+      <ul>
+        <li>63.1　株式会社アールティ</li>
+        <li>63.2　GROOVE X株式会社</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>1	フィジカルAI市場の包括的分析</h2>
+      <ul>
+        <li>1.1	市場規模と成長率</li>
+        <li>1.2	関連市場セグメントと市場規模</li>
+        <li class="level-3">29.2億ドル	152.6億ドル	39.2%</li>
+        <li class="level-3">237.1億ドル	758.9億ドル	13.8%</li>
+        <li class="level-3">447.4億ドル	2800.1億ドル	20.13%</li>
+        <li class="level-3">424.02億ドル	3980.67億ドル	25.1%</li>
+        <li class="level-3">872.3億ドル	9917.0億ドル	4.72%</li>
+        <li class="level-2">205.9億ドル	未指定（2030年）	16.5%</li>
+        <li class="level-3">408.9億ドル	990.4億ドル	19.35%</li>
+        <li class="level-3">6.91億ドル	52.44億ドル	28.95%</li>
+        <li class="level-3">2081.7億ドル	7709.4億ドル	17.8%</li>
+        <li>1.3	市場の主要トレンド</li>
+        <li class="level-2">1.3.1	ビジョン・ランゲージ・アクション（VLA）モデルの急速な進化</li>
+        <li class="level-2">1.3.1	ワールドファンデーションモデル（WFM）の台頭</li>
+        <li class="level-2">1.3.1	シミュレーション・トゥ・リアル（Sim-to-Real）技術の成熟</li>
+        <li class="level-2">1.3.1	接続型ロボティクスとIoRT市場の急速な拡大</li>
+        <li class="level-2">1.3.1	生成AIモデルと自動運転への統合</li>
+        <li>1.4	推進要因</li>
+        <li>1.5	市場機会と領先セグメント</li>
+        <li>1.6	制約と課題</li>
+        <li>1.7	規制・安全面の課題</li>
+        <li>1.8	主要企業と研究機関</li>
+        <li>1.9	市場セグメント別の詳細分析</li>
+        <li class="level-2">1.9.1	ハードウェアセグメント</li>
+        <li class="level-2">1.9.1	ソフトウェア・AIセグメント</li>
+        <li>51.10%</li>
+        <li>48.90%</li>
+        <li class="level-2">1.9.1	産業応用別</li>
+        <li>1.10	投資動向と資金フロー</li>
+        <li class="level-2">1.10.1	2024～2025年のロボティクス投資の概況</li>
+        <li class="level-2">1.10.1	主要資金調達ラウンド（2024～2025年）</li>
+        <li class="level-2">1.10.1	投資トレンドと特性</li>
+        <li>1.11	NVIDIA Cosmos・Omniverse・Isaac Simエコシステムの戦略的役割</li>
+        <li>1.12	市場成長見込みと将来動向</li>
+        <li class="level-2">1.12.1	短期展望（2025～2027年）</li>
+        <li class="level-2">1.12.1	中期展望（2027～2030年）</li>
+        <li class="level-2">1.12.1	長期展望（2030年以降）</li>
+        <li>1.13	小括：フィジカルAI市場の将来ポジショニング</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>2	フィジカルAI統合・ソリューション：カテゴリー別詳細分析</h2>
+      <ul>
+        <li>2.1	はじめに</li>
+        <li>2.2	コア統合アーキテクチャ</li>
+        <li class="level-2">2.2.1	NVIDIA Three-Computer Model（3層統合モデル）</li>
+        <li class="level-2">2.2.1	統合ワークフロー例：Sim-to-Real Pipeline</li>
+        <li>2.3	ミドルウェア・OS層の統合</li>
+        <li class="level-2">2.3.1	ROS 2（Robot Operating System 2）の統合ロール</li>
+        <li class="level-2">2.3.1	GPU統合とリアルタイム処理</li>
+        <li class="level-2">2.3.1	ロボティクス基盤モデルとの連携</li>
+        <li>2.4	ワールドモデル・OS化層</li>
+        <li class="level-2">2.4.1	ワールドモデルの構造的役割</li>
+        <li class="level-2">2.4.1	NVIDIA Cosmos：ワールドモデル・プラットフォーム</li>
+        <li class="level-2">2.4.1	ワールドモデルのOSとしての機能</li>
+        <li>2.5	エッジ・クラウド統合アーキテクチャ</li>
+        <li class="level-2">2.5.1	マルチレイヤーコンピューティング統合</li>
+        <li class="level-2">2.5.1	接続型ロボティクス（Connected Robotics）の実装</li>
+        <li>2.6	マルチモーダル知覚統合</li>
+        <li class="level-2">2.6.1	マルチセンサフュージョン・アーキテクチャ</li>
+        <li class="level-2">2.6.1	Visual SLAM・VSLAM統合</li>
+        <li>2.7	AI駆動型動作計画・タスク実行層</li>
+        <li class="level-2">2.7.1	ファンデーションモデル統合戦略</li>
+        <li class="level-2">2.7.1	Behavior Tree（BT）・LLM統合</li>
+        <li class="level-2">2.7.1	生成AIを使用した行動計画</li>
+        <li>2.8	ドメイン別統合ソリューション</li>
+        <li class="level-2">2.8.1	スマートマニュファクチャリング・ソリューション</li>
+        <li class="level-2">2.8.1	ロジスティクス・ウェアハウスソリューション</li>
+        <li class="level-2">2.8.1	ヘルスケア・医療ソリューション</li>
+        <li class="level-2">2.8.1	自動運転・モビリティソリューション</li>
+        <li>2.9	統合ソリューション・プラットフォーム</li>
+        <li class="level-2">2.9.1	Intrinsic Flowstate + NVIDIA統合</li>
+        <li class="level-2">2.9.1	ROS 2・NVIDIA統合エコシステム</li>
+        <li class="level-2">2.9.1	General Robotics GRID統合プラットフォーム</li>
+        <li>2.10	自律移動システムのOSとしてのワールドモデル進化</li>
+        <li class="level-2">2.10.1	ワールドモデルの機能拡張</li>
+        <li class="level-2">2.10.1	マルチエージェント協調制御</li>
+        <li>2.11	業界別統合実装フレームワーク</li>
+        <li class="level-2">2.11.1	Physical AI Agents（物理AI エージェント）</li>
+        <li class="level-2">2.11.1	事例1: Ph-RAG（Physical Retrieval-Augmented Generation）</li>
+        <li class="level-2">2.11.1	事例2: ハイブリッド・エージェントシステム</li>
+        <li>2.12	フィジカルAI統合の現在の制限と今後の展開</li>
+        <li class="level-2">2.12.1	現在の統合課題</li>
+        <li class="level-2">2.12.1	近期的展開（2025～2027年）</li>
+        <li class="level-2">2.12.1	中期的進化（2027～2030年）</li>
+        <li>2.13	小括</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>3	フィジカルAIエコシステム：カテゴリー別詳細分析</h2>
+      <ul>
+        <li>3.1	エコシステムの全体構造</li>
+        <li>3.2	ロボットハードウェア・プラットフォーム層</li>
+        <li class="level-2">3.2.1	ヒューマノイドロボット企業エコシステム</li>
+        <li class="level-2">3.2.1	自律移動ロボット（AMR）・ロジスティクスエコシステム</li>
+        <li class="level-2">3.2.1	マニピュレータ・コボットエコシステム</li>
+        <li>3.3	センサ・知覚システム層</li>
+        <li class="level-2">3.3.1	LiDARセンサエコシステム</li>
+        <li class="level-2">3.3.1	カメラ・ビジョンシステム層</li>
+        <li class="level-2">3.3.1	触覚・IMU・運動センサ</li>
+        <li>3.4	エッジコンピュート・通信層</li>
+        <li class="level-2">3.4.1	エッジAIチップセットエコシステム</li>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>275 TOPS AI	12コアARM・2048コアGPU・64GB LPDDR5	自律ロボット・ドローン・3D知覚</h2>
+      <ul>
+      </ul>
+    </div>
+    <div class="section">
+      <h2>15 TOPS（5G統合）	8コアKryo 585・Adreno 650・Hexagon HTA・7カメラ対応	5G接続ロボット・マルチセンサ融合</h2>
+      <ul>
+        <li class="level-2">3.4.1	通信・接続レイヤー</li>
+        <li>3.5	ロボティクスプラットフォーム・ソフトウェアレイヤー</li>
+        <li class="level-2">3.5.1	ROS 2統合エコシステム</li>
+        <li class="level-2">3.5.1	シミュレーション・デジタルツインプラットフォーム</li>
+        <li class="level-2">3.5.1	生成AI・ファンデーションモデルプラットフォーム</li>
+        <li>3.6	システムインテグレータ・ソリューション企業層</li>
+        <li class="level-2">3.6.1	主要システムインテグレータ</li>
+        <li class="level-2">3.6.1	Accenture Physical AI Orchestrator事例[31]</li>
+        <li>3.7	研究・学術エコシステム</li>
+        <li class="level-2">3.7.1	主要研究機関</li>
+        <li class="level-2">3.7.1	大学・企業連携モデル</li>
+        <li>3.8	投資・資本フローエコシステム</li>
+        <li class="level-2">3.8.1	2025年のロボティクス投資動向</li>
+        <li class="level-2">3.8.1	投資テーマの進化</li>
+        <li>3.9	業界別・ドメイン別エコシステム</li>
+        <li class="level-2">3.9.1	スマートマニュファクチャリングエコシステム</li>
+        <li class="level-2">3.9.1	ヘルスケア・医療ロボティクスエコシステム</li>
+        <li class="level-2">3.9.1	ロジスティクス・ウェアハウスエコシステム</li>
+        <li class="level-2">3.9.1	自動運転・モビリティエコシステム</li>
+        <li>3.10	新興パラダイム：統合型ロボティクスプラットフォーム</li>
+        <li class="level-2">3.10.1	Neuraverse（NEURA Robotics）</li>
+        <li class="level-2">3.10.1	SAP Embodied AI Initiative</li>
+        <li>3.11	相互運用性・標準化エコシステム</li>
+        <li class="level-2">3.11.1	OpenUSD（Universal Scene Description）</li>
+        <li>11.2 マイクロサービス・API層</li>
+        <li>3.12	グローバルエコシステムの地域別特性</li>
+        <li class="level-2">3.12.1	北米エコシステム</li>
+        <li class="level-2">3.12.1	欧州エコシステム</li>
+        <li class="level-2">3.12.1	アジア太平洋エコシステム</li>
+        <li>3.13	ベンチマークとKPI・エコシステム健全性指標</li>
+        <li>3.14	エコシステム成熟度の課題と対策</li>
+        <li class="level-2">3.14.1	現在の課題</li>
+        <li class="level-2">3.14.1	解決策の出現</li>
+        <li>3.15	小括：フィジカルAIエコシステムの統合的理解</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
